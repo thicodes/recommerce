@@ -3,11 +3,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
-const ROLES = {
-  ADMIN: "Admin",
-  CORRETOR: "Corretor"
-};
-
 const Schema = new mongoose.Schema(
   {
     name: {
@@ -17,11 +12,6 @@ const Schema = new mongoose.Schema(
     password: {
       type: String,
       hidden: true
-    },
-    role: {
-      type: String,
-      enum: ["ADMIN", "CORRETOR"],
-      required: true
     },
     email: {
       type: String,

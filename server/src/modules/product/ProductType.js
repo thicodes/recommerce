@@ -6,25 +6,29 @@ import { registerType, nodeInterface } from "../../interface/NodeInterface";
 
 export default registerType(
   new GraphQLObjectType({
-    name: "User",
-    description: "User data",
+    name: "Product",
+    description: "Product data",
     fields: () => ({
-      id: globalIdField("User"),
+      id: globalIdField("Product"),
       _id: {
         type: GraphQLString,
-        resolve: user => user._id
+        resolve: product => product._id
       },
-      name: {
+      title: {
         type: GraphQLString,
-        resolve: user => user.name
+        resolve: product => product.title
       },
-      email: {
+      description: {
         type: GraphQLString,
-        resolve: user => user.email
+        resolve: product => product.description
       },
-      active: {
-        type: GraphQLBoolean,
-        resolve: user => user.active
+      photo: {
+        type: GraphQLString,
+        resolve: product => product.photo
+      },
+      price: {
+        type: GraphQLString,
+        resolve: product => product.price
       }
     }),
     interfaces: () => [nodeInterface]
