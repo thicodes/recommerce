@@ -9,9 +9,11 @@ import {
 import { connectionArgs, fromGlobalId } from "graphql-relay";
 
 import UserType from "../modules/user/UserType";
+import ProductType from "../modules/product/ProductType";
 import { nodeField } from "../interface/NodeInterface";
 import { UserLoader, CustomerLoader } from "../loader";
 import UserConnection from "../modules/user/UserConnection";
+import ProductConnection from "../modules/user/ProductConnection";
 
 export default new GraphQLObjectType({
   name: "Query",
@@ -44,6 +46,28 @@ export default new GraphQLObjectType({
         }
       },
       resolve: (obj, args, context) => UserLoader.loadUsers(context, args)
+    },
+    product: {
+      type: ProductType,
+      args: {
+        id: {
+          type: new GraphQLNonNull(GraphQLID)
+        }
+      },
+      resolve: (obj, args, context) => {
+        const { id } = fromGlobalId(args.id);
+        return ProductLoader.load(context, id);
+      }
+    },
+    products: {
+      type: ProductConnection.connectionType,
+      args: {
+        ...connectionArgs,
+        search: {
+          type: GraphQLString
+        }
+      },
+      resolve: (obj, args, context) => ProductLoader.loadUsers(context, args)
     }
   })
 });
