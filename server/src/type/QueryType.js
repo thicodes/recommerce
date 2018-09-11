@@ -67,7 +67,7 @@ export default new GraphQLObjectType({
           type: GraphQLString
         }
       },
-      resolve: (obj, args, context) => ProductLoader.loadUsers(context, args)
+      resolve: (obj, args, context) => ProductLoader.loadProducts(context, args)
     }
   })
 });
