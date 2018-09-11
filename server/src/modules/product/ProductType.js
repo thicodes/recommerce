@@ -3,6 +3,7 @@
 import { GraphQLObjectType, GraphQLString, GraphQLBoolean } from "graphql";
 import { globalIdField } from "graphql-relay";
 import { registerType, nodeInterface } from "../../interface/NodeInterface";
+import SizesType from "./SizesType";
 
 export default registerType(
   new GraphQLObjectType({
@@ -29,6 +30,10 @@ export default registerType(
       price: {
         type: GraphQLString,
         resolve: product => product.price
+      },
+      sizes: {
+        type: SizesType,
+        resolve: product => product.sizes
       }
     }),
     interfaces: () => [nodeInterface]
