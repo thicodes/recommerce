@@ -1,8 +1,14 @@
 // @flow
-import { GraphQLString, GraphQLNonNull, GraphQLEnumType } from "graphql";
+import {
+  GraphQLString,
+  GraphQLNonNull,
+  GraphQLEnumType,
+  GraphQLList
+} from "graphql";
 import { mutationWithClientMutationId } from "graphql-relay";
 import ProductType from "../modules/product/ProductType";
 import { Product } from "../model";
+import SizesType from "../modules/product/SizesType";
 
 export default mutationWithClientMutationId({
   name: "ProductAdd",
@@ -20,7 +26,7 @@ export default mutationWithClientMutationId({
       type: new GraphQLNonNull(GraphQLString)
     },
     sizes: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: new GraphQLNonNull(SizesType)
     }
   },
   mutateAndGetPayload: async (

@@ -20,7 +20,9 @@ const Schema = new mongoose.Schema(
       required: false
     },
     sizes: {
-      enum: ["P", "M", "G", "GG"]
+      type: String,
+      enum: ["P", "M", "G", "GG"],
+      required: true
     }
   },
   {
