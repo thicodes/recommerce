@@ -11,9 +11,9 @@ import { connectionArgs, fromGlobalId } from "graphql-relay";
 import UserType from "../modules/user/UserType";
 import ProductType from "../modules/product/ProductType";
 import { nodeField } from "../interface/NodeInterface";
-import { UserLoader, CustomerLoader } from "../loader";
+import { UserLoader, ProductLoader } from "../loader";
 import UserConnection from "../modules/user/UserConnection";
-import ProductConnection from "../modules/user/ProductConnection";
+import ProductConnection from "../modules/product/ProductConnection";
 
 export default new GraphQLObjectType({
   name: "Query",

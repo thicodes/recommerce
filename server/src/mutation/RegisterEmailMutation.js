@@ -4,7 +4,6 @@ import { mutationWithClientMutationId } from "graphql-relay";
 import { User } from "../model";
 import { generateToken } from "../auth";
 import pubSub, { EVENTS } from "../pubSub";
-import RoleType from "../type/RoleType";
 
 export default mutationWithClientMutationId({
   name: "RegisterEmail",
@@ -17,9 +16,6 @@ export default mutationWithClientMutationId({
     },
     password: {
       type: new GraphQLNonNull(GraphQLString)
-    },
-    role: {
-      type: new GraphQLNonNull(RoleType)
     }
   },
   mutateAndGetPayload: async ({ name, email, password, role }) => {
