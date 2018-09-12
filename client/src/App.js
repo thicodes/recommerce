@@ -5,6 +5,7 @@ import ProductListContainer from "./containers/ProductListContainer";
 import CheckoutContainer from "./containers/CheckoutContainer";
 import HeaderContainer from "./containers/HeaderContainer";
 import configureStore from "./configureStore";
+import "typeface-roboto";
 
 const store = configureStore();
 
