@@ -1,18 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Header from "../components/Header";
 import Cart from "../components/Cart";
 
 class HeaderContainer extends Component {
   state = {
     openCartPanel: false,
-    cart: [
-      {
-        id: 1
-      },
-      {
-        id: 2
-      }
-    ]
+    cart: [{ id: 1 }, { id: 2 }, { id: 3 }]
   };
 
   toggleDrawer = (side, open) => () => {
