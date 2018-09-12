@@ -4,7 +4,15 @@ import Cart from "../components/Cart";
 
 class HeaderContainer extends Component {
   state = {
-    openCartPanel: false
+    openCartPanel: false,
+    cart: [
+      {
+        id: 1
+      },
+      {
+        id: 2
+      }
+    ]
   };
 
   toggleDrawer = (side, open) => () => {
@@ -14,11 +22,15 @@ class HeaderContainer extends Component {
   };
 
   render() {
-    const { openCartPanel } = this.state;
+    const { openCartPanel, cart } = this.state;
 
     return (
       <Header>
-        <Cart openCartPanel={openCartPanel} toggleDrawer={this.toggleDrawer} />
+        <Cart
+          openCartPanel={openCartPanel}
+          toggleDrawer={this.toggleDrawer}
+          cart={cart}
+        />
       </Header>
     );
   }

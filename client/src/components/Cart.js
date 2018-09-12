@@ -1,10 +1,16 @@
 import React from "react";
 import Drawer from "@material-ui/core/Drawer";
-import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import Badge from "@material-ui/core/Badge";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCartOutlined";
 
-const Cart = ({ openCartPanel, toggleDrawer }) => (
+const Cart = ({ openCartPanel, toggleDrawer, cart }) => (
   <div>
-    <Button onClick={toggleDrawer("right", true)}>Open Right</Button>
+    <IconButton onClick={toggleDrawer("right", true)} color="inherit">
+      <Badge badgeContent={cart.length} color="secondary">
+        <ShoppingCartIcon />
+      </Badge>
+    </IconButton>
     <Drawer
       anchor="right"
       open={openCartPanel}
