@@ -4,12 +4,19 @@ import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCartOutlined";
 
-const Cart = ({ openCartPanel, toggleDrawer, cart }) => (
+const ShowBadge = ({ cartProducts }) =>
+  cartProducts === 0 ? (
+    <ShoppingCartIcon />
+  ) : (
+    <Badge badgeContent={cartProducts} color="secondary">
+      <ShoppingCartIcon />
+    </Badge>
+  );
+
+const Cart = ({ openCartPanel, toggleDrawer, cartProducts }) => (
   <div>
     <IconButton onClick={toggleDrawer("right", true)} color="inherit">
-      <Badge badgeContent={cart.length} color="secondary">
-        <ShoppingCartIcon />
-      </Badge>
+      <ShowBadge cartProducts={cartProducts} />
     </IconButton>
     <Drawer
       anchor="right"
@@ -21,9 +28,7 @@ const Cart = ({ openCartPanel, toggleDrawer, cart }) => (
         role="button"
         onClick={toggleDrawer("right", false)}
         onKeyDown={toggleDrawer("right", false)}
-      >
-        asdasd
-      </div>
+      />
     </Drawer>
   </div>
 );
