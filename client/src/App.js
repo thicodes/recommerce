@@ -75,12 +75,14 @@ class App extends Component {
         <HeaderContainer
           products={this.state.products}
           cart={this.state.cart}
-          addToCart={this.addToCart}
           cartQuantityByIds={this.state.cartQuantityByIds}
           getCartQuantity={this.getCartQuantity}
+        />
+        <ProductListContainer
+          products={this.state.products}
+          addToCart={this.addToCart}
           removeFromCart={this.removeFromCart}
         />
-        <ProductListContainer />
       </div>
       // <Provider>
       //   <HeaderContainer />
