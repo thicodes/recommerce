@@ -22,7 +22,7 @@ class HeaderContainer extends Component {
           <Cart
             openCartPanel={openCartPanel}
             toggleDrawer={this.toggleDrawer}
-            cartProducts={this.props.getCartQuantity(
+            cartProductsQuantity={this.props.getCartQuantity(
               this.props.cartQuantityByIds
             )}
           />
