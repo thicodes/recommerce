@@ -26,13 +26,13 @@ const ProductList = ({ products, addToCart, removeFromCart }) => (
   <Wrapper>
     <Grid container spacing={40}>
       {products.map(product => (
-        <Grid item key={product} sm={6} md={4} lg={3}>
+        <Grid item key={product.node.id} sm={6} md={4} lg={3}>
           <Product>
             <div
               style={{ maxHeight: 300, overflow: "hidden", marginBottom: 10 }}
             >
               <img
-                src={product.photo}
+                src={product.node.photo}
                 style={{ width: "100%", height: "auto" }}
               />
             </div>
@@ -42,7 +42,7 @@ const ProductList = ({ products, addToCart, removeFromCart }) => (
               align="center"
               style={{ paddingBottom: 5 }}
             >
-              {product.title}
+              {product.node.title}
             </Typography>
             <Typography
               variant="body1"
@@ -50,7 +50,7 @@ const ProductList = ({ products, addToCart, removeFromCart }) => (
               align="center"
               style={{ paddingBottom: 10 }}
             >
-              R$ <span style={{ fontSize: 27 }}>{product.price}</span>
+              R$ <span style={{ fontSize: 27 }}>{product.node.price}</span>
             </Typography>
             <ButtonStyled
               variant="contained"
