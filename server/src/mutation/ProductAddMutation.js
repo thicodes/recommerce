@@ -3,7 +3,8 @@ import {
   GraphQLString,
   GraphQLNonNull,
   GraphQLEnumType,
-  GraphQLList
+  GraphQLList,
+  GraphQLInt
 } from "graphql";
 import { mutationWithClientMutationId } from "graphql-relay";
 import ProductType from "../modules/product/ProductType";
@@ -27,6 +28,9 @@ export default mutationWithClientMutationId({
     },
     sizes: {
       type: new GraphQLNonNull(SizesType)
+    },
+    stock: {
+      type: new GraphQLNonNull(GraphQLInt)
     }
   },
   mutateAndGetPayload: async (
