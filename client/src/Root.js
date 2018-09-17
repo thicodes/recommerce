@@ -61,13 +61,14 @@ class Root extends Component {
   };
 
   removeFromCart = item => {
-    const removeQuantity = this.state.cartQuantityByIds[item.id] - 1;
+    const { node } = item;
+    const removeQuantity = this.state.cartQuantityByIds[node.id] - 1;
 
     if (removeQuantity >= 0) {
       this.setState({
         cartQuantityByIds: {
           ...this.state.cartQuantityByIds,
-          [item.id]: this.state.cartQuantityByIds[item.id] - 1
+          [node.id]: this.state.cartQuantityByIds[node.id] - 1
         }
       });
     }
