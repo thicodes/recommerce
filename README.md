@@ -3,7 +3,6 @@
 How to run recommerce
 
 [Demo](https://stupefied-feynman-f284cd.netlify.com/)
-[Recommerce Server](https://graphql-dataloader-boilerplate-gzfhoyesmb.now.sh/graphql/)
 
 
 ## Run locally (Develop)
