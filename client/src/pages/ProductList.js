@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  padding-top: 20px;
+  padding: 30px 40px;
 `;
 
 const Product = styled.div`
@@ -15,6 +15,7 @@ const Product = styled.div`
   &:hover {
     border: 1px solid #eee;
   }
+  background: white;
 `;
 
 const ButtonStyled = styled(Button)`

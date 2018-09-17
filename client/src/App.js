@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import ProductListContainer from "./containers/ProductListContainer";
 import CheckoutContainer from "./containers/CheckoutContainer";
 import HeaderContainer from "./containers/HeaderContainer";
@@ -72,6 +73,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <CssBaseline />
         <HeaderContainer
           products={this.state.products}
           cart={this.state.cart}
