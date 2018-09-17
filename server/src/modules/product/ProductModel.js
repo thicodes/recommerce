@@ -23,6 +23,9 @@ const Schema = new mongoose.Schema(
       type: String,
       enum: ["P", "M", "G", "GG"],
       required: true
+    },
+    stock: {
+      type: Number
     }
   },
   {

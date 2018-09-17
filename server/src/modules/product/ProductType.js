@@ -1,6 +1,11 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLString, GraphQLBoolean } from "graphql";
+import {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLBoolean,
+  GraphQLInt
+} from "graphql";
 import { globalIdField } from "graphql-relay";
 import { registerType, nodeInterface } from "../../interface/NodeInterface";
 import SizesType from "./SizesType";
@@ -34,6 +39,10 @@ export default registerType(
       sizes: {
         type: SizesType,
         resolve: product => product.sizes
+      },
+      stock: {
+        type: GraphQLInt,
+        resolve: product => product.stock
       }
     }),
     interfaces: () => [nodeInterface]

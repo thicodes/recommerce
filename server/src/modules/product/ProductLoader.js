@@ -16,7 +16,8 @@ type ProductType = {
   description: string,
   photo: string,
   price: string,
-  sizes: string
+  sizes: string,
+  stock: number
 };
 
 export default class Product {
@@ -27,6 +28,7 @@ export default class Product {
   photo: string;
   price: string;
   sizes: string;
+  stock: number;
 
   constructor(data: ProductType, { product }: GraphQLContext) {
     this.id = data.id;
@@ -36,6 +38,7 @@ export default class Product {
     this.photo = data.photo;
     this.price = data.price;
     this.sizes = data.sizes;
+    this.stock = data.stock;
   }
 }
 
